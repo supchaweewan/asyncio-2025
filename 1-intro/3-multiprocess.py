@@ -3,6 +3,8 @@ from multiprocessing import Process
 from datetime import datetime
 
 def make_burger(student_id):
+    start_burger = time.time()
+    start_date = datetime.now().strftime('%H:%M:%S')
     print(f"[{datetime.now().strftime('%H:%M:%S')}] เริ่มทำเบอร์เกอร์ให้นักเรียนคนที่ {student_id}")
     
     print(f"[{datetime.now().strftime('%H:%M:%S')}] 1. ทอดเบอร์เกอร์...")
@@ -18,6 +20,10 @@ def make_burger(student_id):
     time.sleep(5)
 
     print(f"[{datetime.now().strftime('%H:%M:%S')}] เสร็จแล้ว! เบอร์เกอร์ของนักเรียนคนที่ {student_id}")
+    end_burger = time.time()
+    end_date = datetime.now().strftime('%H:%M:%S')
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] เบอร์เกอร์นักเรียนคนที่ {student_id} เริ่มเมื่อ {start_date} และเสร็จเมื่อ {end_date} ได้ใช้เวลา: {end_burger - start_burger:.2f} วินาที")
+
 
 def main():
     start = time.time()
