@@ -9,7 +9,7 @@ class FakeDatabase:
         self._lock = threading.Lock()
 
     def locked_update(self, name):
-        logging.info("Thread ^s: starting update)", name)
+        logging.info("Thread %s: starting update)", name)
         logging.debug("Thread %s about to lock", name)
         with self._lock:
             logging.debug("Thread %s has locked", name)
@@ -23,7 +23,7 @@ class FakeDatabase:
 
 if __name__ == "__main__":
     format = "%(asctime)s: %(message)s"
-    logging.basicConfig(format=format, level=logging.INFO, datefmt="%H:%M:%S")
+    logging.basicConfig(format=format, level=logging.DEBUG, datefmt="%H:%M:%S")
 
     database = FakeDatabase()
     logging.info(
