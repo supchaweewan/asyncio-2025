@@ -21,7 +21,7 @@ def cooking(index, basket):
 
 #Kitchen cooking
 def kitchen(index, share_eggs):
-    print(f"{ctime()} Kitchen number {index}    : Begin with PID {os.getpid()}")
+    print(f"{ctime()} Kitchen number {index}    : Begin cooking with PID {os.getpid()}")
     cooking_time = time()
     cooking(index, share_eggs)
     duration = time() - cooking_time
