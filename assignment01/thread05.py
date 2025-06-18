@@ -19,3 +19,5 @@ if __name__ == "__main__":
     logging.info("Main  : wait for the thread to finish")
     x.join()
     logging.info("Main  : all done.")
+
+# This allows to display details specific to threads
