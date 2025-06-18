@@ -5,7 +5,7 @@ from time import sleep, ctime, time
 
 def cooking(index):
     cooking_time = time()
-    print(f"{ctime()} Kitchen number {index}    : Will begin with PID {os.getpid()}")
+    print(f"{ctime()} Kitchen number {index}    : Will cook with PID {os.getpid()}")
     sleep(2)
     duration = time() - cooking_time
     print(f"{ctime()} Kitchen number {index}    : Cooking done in {duration:0.2f} seconds.")
