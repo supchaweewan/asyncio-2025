@@ -14,9 +14,9 @@ def game(board):
     for i in range(move_pairs):
     
         time.sleep(judit_time)
-        print(F"Board {board} turn {i} - Judit makes a move with {int(judit_time*speed)} seconds.")
+        print(F"Board {board+1} turn {i+1} - Judit makes a move with {int(judit_time*speed)} seconds.")
         time.sleep(opponent_time)
-        print(f"Board {board} turn {i} - Opponent makes a move with {int(opponent_time*speed)} seconds.")
+        print(f"Board {board+1} turn {i+1} - Opponent makes a move with {int(opponent_time*speed)} seconds.")
     print(f">>><>>><><<<><<< Board {board} - would have finished in {calc_time} seconds.")
     print(f">>><>>><><<<><<< Board {board} - finishes in {(time.perf_counter() - start)*speed} seconds.")
     total_time += (time.perf_counter() - start)*speed
