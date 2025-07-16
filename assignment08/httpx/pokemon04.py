@@ -8,10 +8,6 @@ async def fetch(name):
         data = response.json()
         return name, data['id'], [t['type']['name'] for t in data['types']]
 
-    
-
-
-
 async def main():
     pokemon_names = ["pikachu", "bulbasaur", "charmander", "squirtle", "eevee", "snorlax", "gengar", "mewtwo", "psyduck", "jigglypuff"]
 
