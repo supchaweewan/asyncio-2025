@@ -21,7 +21,7 @@ async def get_pokemons():
     # Get the number of comics to fetch from app config
     NUMBER_OF_POKEMON = current_app.config["NUMBER_OF_POKEMON"]
     for i in range(NUMBER_OF_POKEMON):
-        rand_list.append(random.randint(1,151))
+        rand_list.append(random.randint(1,300))
     pokemon_data = []
     for number in rand_list:
         url = f'https://pokeapi.co/api/v2/pokemon/{number}'
