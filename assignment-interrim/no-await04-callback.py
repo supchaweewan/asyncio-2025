@@ -3,10 +3,11 @@ import time
 import random
 
 async def save_to_db(sensor_id, value):
+    #await asyncio.sleep(random.uniform(0.5, 1.5))
     await asyncio.sleep(1)
     if value > 80:
         raise ValueError(f"Sensor {sensor_id}: Value too high")
-    print(f"{time.ctime()} Saved {sensor_id} = {value}")
+    return(f"{sensor_id} saved value {value}")
 
 def task_done_callback(task: asyncio.Task):
     try:
