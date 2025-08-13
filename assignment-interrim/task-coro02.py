@@ -14,7 +14,7 @@ async def fetch(url):
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as resp:
             text = await resp.text()
-            print(f"[{time.ctime()}] Done{url} ({len(text)} bytes)")
+            print(f"[{time.ctime()}] Done {url} ({len(text)} bytes)")
             return url, len(text)
 
 async def main():
