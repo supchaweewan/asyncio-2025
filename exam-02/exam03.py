@@ -42,9 +42,6 @@ async def main():
     timers = [("A", 3), ("B", 5), ("C", 2)]
     
     tasks = []
-    for i, j in timers:
-        print(i)
-        print(j)
     clocks = [asyncio.create_task(countdown(i, j)) for i, j in timers]
 
     for c in clocks:
