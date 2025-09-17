@@ -28,11 +28,20 @@ async def work(n):
     return n
 
 async def main():
-    results = []
-    for i in range(3):
-        results.append(asyncio.create_task(work(i)))
-    for r in results:
-        print("Result:", await r)
+    results1 = []
+    
+    value = [asyncio.create_task(work(i)) for i in range(3)]
+    for v in value:
+        await v
+        results1.append(v.result())
+    print("Results1:", results1)
+    results2 = []
+    value2 = [asyncio.create_task(work(i+3)) for i in range(3)]
+    for j in value2:
+        await j
+        results2.append(j.result())
+    print("Results2:", results2)
 
 asyncio.run(main())
-asyncio.run(main())
+
+# Finished

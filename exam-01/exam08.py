@@ -8,8 +8,8 @@ import aiohttp
 import asyncio
 
 async def fetch(url):
-    session = aiohttp.ClientSession()   # ไม่ปิด
-    async with session.get(url) as resp:
+    async with aiohttp.ClientSession() as session: # ไม่ปิด
+        resp = await session.get(url)
         return await resp.text()
 
 async def main():
@@ -17,3 +17,5 @@ async def main():
     print(len(html))
 
 asyncio.run(main())
+
+# Finished
